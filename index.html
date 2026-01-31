@@ -1,75 +1,135 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Lista Komend Streama</title>
+    <title>Komendy Streama</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
+        :root {
+            --bg: #0f0f13;
+            --card: #1b1c22;
+            --accent: #ff7a18;
+            --accent-soft: rgba(255, 122, 24, 0.15);
+            --text: #eaeaf0;
+            --muted: #a0a0b0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            background-color: #121212;
-            color: #f0f0f0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
             margin: 0;
-            padding: 0;
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            background: radial-gradient(circle at top, #1a1b22, #0f0f13 60%);
+            color: var(--text);
         }
+
         header {
-            background-color: #1f1f1f;
-            padding: 20px;
+            padding: 40px 20px 30px;
             text-align: center;
-            font-size: 2em;
-            font-weight: bold;
-            border-bottom: 2px solid #ff4500;
         }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            margin-top: 8px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
         main {
-            max-width: 600px;
-            margin: 30px auto;
-            padding: 0 20px;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 16px 40px;
         }
+
         .command {
-            background-color: #1e1e1e;
-            border-left: 5px solid #ff4500;
-            padding: 10px 15px;
-            margin: 10px 0;
-            border-radius: 5px;
-            transition: background 0.2s;
+            display: flex;
+            justify-content: space-between;
+            gap: 14px;
+            background: linear-gradient(145deg, var(--card), #15161b);
+            padding: 14px 18px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #23242c;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
         }
+
         .command:hover {
-            background-color: #2a2a2a;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.35);
         }
+
         .cmd-name {
-            font-weight: bold;
-            color: #ffa500;
+            font-weight: 600;
+            color: var(--accent);
+            white-space: nowrap;
         }
+
         .cmd-desc {
-            margin-left: 10px;
-            color: #cccccc;
+            color: var(--muted);
+            text-align: right;
+            flex: 1;
         }
+
         footer {
             text-align: center;
-            margin: 40px 0 20px 0;
-            color: #888888;
-            font-size: 0.9em;
+            padding: 30px 10px 20px;
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        footer span {
+            color: var(--accent);
+        }
+
+        @media (max-width: 500px) {
+            .command {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .cmd-desc {
+                text-align: left;
+            }
         }
     </style>
 </head>
 <body>
-    <header>Lista Komend Streama</header>
-    <main>
-        <div class="command"><span class="cmd-name">!accountage</span><span class="cmd-desc"> -> kiedy utworzyłem konto</span></div>
-        <div class="command"><span class="cmd-name">!donate</span><span class="cmd-desc"> -> Możesz dać donate</span></div>
-        <div class="command"><span class="cmd-name">!duo</span><span class="cmd-desc"> -> Kto jest moim duo</span></div>
-        <div class="command"><span class="cmd-name">!followage</span><span class="cmd-desc"> -> od jakiego czasu followujesz</span></div>
-        <div class="command"><span class="cmd-name">!mały</span><span class="cmd-desc"> -> no ja</span></div>
-        <div class="command"><span class="cmd-name">!małpa</span><span class="cmd-desc"> -> kim jest małpa</span></div>
-        <div class="command"><span class="cmd-name">!marek</span><span class="cmd-desc"> -> kim jest marek</span></div>
-        <div class="command"><span class="cmd-name">!mikson</span><span class="cmd-desc"> -> kim jest mikson</span></div>
-        <div class="command"><span class="cmd-name">!solo</span><span class="cmd-desc"> -> ciekawe z kim mogę grać</span></div>
-        <div class="command"><span class="cmd-name">!squad</span><span class="cmd-desc"> -> Kto jest moim squadem</span></div>
-        <div class="command"><span class="cmd-name">!trio</span><span class="cmd-desc"> -> Kto jest moim trio</span></div>
-        <div class="command"><span class="cmd-name">!watchtime</span><span class="cmd-desc"> -> ile oglądałeś mój kanał</span></div>
-        <div class="command"><span class="cmd-name">!welcome</span><span class="cmd-desc"> -> Witaj na moim streamie</span></div>
-        <div class="command"><span class="cmd-name">!wiek</span><span class="cmd-desc"> -> ile mam lat</span></div>
-    </main>
-    <footer>Stworzono przez malvfn_ | 2026</footer>
+
+<header>
+    <h1>📜 Komendy Streama</h1>
+    <p>Wpisz komendę na czacie, aby uzyskać więcej info</p>
+</header>
+
+<main>
+    <div class="command"><div class="cmd-name">!accountage</div><div class="cmd-desc">kiedy utworzyłem konto</div></div>
+    <div class="command"><div class="cmd-name">!donate</div><div class="cmd-desc">możesz dać donate</div></div>
+    <div class="command"><div class="cmd-name">!duo</div><div class="cmd-desc">kto jest moim duo</div></div>
+    <div class="command"><div class="cmd-name">!followage</div><div class="cmd-desc">od jakiego czasu followujesz</div></div>
+    <div class="command"><div class="cmd-name">!mały</div><div class="cmd-desc">no ja</div></div>
+    <div class="command"><div class="cmd-name">!małpa</div><div class="cmd-desc">kim jest małpa</div></div>
+    <div class="command"><div class="cmd-name">!marek</div><div class="cmd-desc">kim jest marek</div></div>
+    <div class="command"><div class="cmd-name">!mikson</div><div class="cmd-desc">kim jest mikson</div></div>
+    <div class="command"><div class="cmd-name">!solo</div><div class="cmd-desc">ciekawe z kim mogę grać</div></div>
+    <div class="command"><div class="cmd-name">!squad</div><div class="cmd-desc">kto jest moim squadem</div></div>
+    <div class="command"><div class="cmd-name">!trio</div><div class="cmd-desc">kto jest moim trio</div></div>
+    <div class="command"><div class="cmd-name">!watchtime</div><div class="cmd-desc">ile oglądałeś mój kanał</div></div>
+    <div class="command"><div class="cmd-name">!welcome</div><div class="cmd-desc">witaj na moim streamie</div></div>
+    <div class="command"><div class="cmd-name">!wiek</div><div class="cmd-desc">ile mam lat</div></div>
+</main>
+
+<footer>
+    Stworzono przez <span>malvfn_</span> • 2026
+</footer>
+
 </body>
 </html>
+
+
